@@ -80,6 +80,7 @@ public class PersonEditDialogController {
         birthdayField.setPromptText("dd.mm.yyyy");
         
     	//PS6 - Calling the addPerson method
+        
     	PersonDAL.updatePerson(person);  
     }
 

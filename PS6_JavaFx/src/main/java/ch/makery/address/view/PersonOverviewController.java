@@ -117,6 +117,7 @@ public class PersonOverviewController {
         	
         	
             personTable.getItems().remove(selectedIndex);
+            PersonDAL.deletePerson(perID);
             
             
         } else {
@@ -141,8 +142,11 @@ public class PersonOverviewController {
         boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
         if (okClicked) {
         	//PS6 - Calling the addPerson method
-        	//TODO: Call Add Person in PersonDAL        	
+        	//TODO: Call Add Person in PersonDAL 
+        	
+        	
             mainApp.getPersonData().add(tempPerson);
+            PersonDAL.addPerson(tempPerson);
         }
     }
 
@@ -159,7 +163,9 @@ public class PersonOverviewController {
             	
             	//PS6 - Calling the updatePerson method
             	//TODO: Call Update Person in PersonDAL 
+            	
                 showPersonDetails(selectedPerson);
+                PersonDAL.updatePerson(selectedPerson);
             }
 
         } else {
